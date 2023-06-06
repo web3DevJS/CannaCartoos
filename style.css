@@ -17,6 +17,28 @@ h2.site-title {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+.metamask_conectar-login {
+  text-align: center;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 0px;
+}
+
+.my-button {
+  background-color: gray;
+  color: dimgrey;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+
 main {
   padding: 20px;
 }
@@ -164,4 +186,12 @@ footer p {
 
 .social {
   margin: 10px;
+}
+
+.contagem_regressiva {
+  border: 2px solid #00ff00;
+  margin: 20px;
+  color: #00ff00;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
 }
