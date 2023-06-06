@@ -1,3 +1,137 @@
 body {
-    font-size: 15pt;
+  background-color: #282c34;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
+header {
+  padding: 20px;
+}
+
+h1.site-title {
+  color: #00ff00;
+  font-size: 32px;
+  text-align: center;
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h2.titulo_proje {
+  color: #00ff00;
+  font-size: 24px;
+  margin-top: 0;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li:before {
+  content: "»";
+  margin-right: 5px;
+  color: #00ff00;
+}
+
+a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.Centralizar_ {
+  text-align: center;
+  color: #00ff00;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.fazendeiro {
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.fazendeiro img {
+  max-width: 100%;
+  
+}
+
+.road_map-Date {
+  color: #00ff00;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.road_map-description {
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  h1.site-title {
+    font-size: 24px;
+  }
+
+  h2.titulo_proje {
+    font-size: 20px;
+  }
+}
+
+.container {
+  padding: 5px;
+  border: 2px solid purple;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(156, 39, 176, 0.4);
+}
+
+.hr-line {
+  border-bottom: 1px solid #00ff00;
+  margin: 10px 10px;
+  
+}
+
+.contato {
+  color: whitesmoke;
+}
+
+.ganjagiggles {
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0px 20px 0px 20px;
+  box-shadow: 0 0 10px 2px rgba(0, 255, 0, 0.8);
+}
+
+.txt_NFTs {
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+}
+
+.propaganda {
+  margin: 5px;
+}  
