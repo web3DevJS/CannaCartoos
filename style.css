@@ -80,10 +80,11 @@ footer {
   padding: 20px;
   text-align: center;
   color: #888;
+  
 }
 
 footer p {
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
 }
 
@@ -191,7 +192,8 @@ footer p {
 }
 
 .social {
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .contagem_regressiva {
@@ -227,5 +229,17 @@ footer p {
   padding: 5px;
   border-radius: 10px;
   margin-top: 30px;
-  
+}
+
+.seda_branca {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.seda_branca h1 {
+  color: #00ff00;
+}
+
+.direitos {
+  font-size: 10px;
 }
