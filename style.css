@@ -243,3 +243,30 @@ footer p {
 .direitos {
   font-size: 10px;
 }
+
+
+.preco_matic {
+  overflow: auto; /* Limpa o float */
+  text-align: center;
+  margin-top: 35px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.matic_brl, .matic_usd {
+  float: left;
+  width: 50%;
+  font-size: 16px;
+  /* Outros estilos desejados para as divs */
+}
+
+.fonte {
+  text-align: center;
+  
+}
+
+.fonte_coingecko {
+  font-size: 25px;
+  margin: 10px;
+}
+
