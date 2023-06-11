@@ -274,3 +274,36 @@ footer p {
   margin-bottom: 20px;
 }
 
+.paridades_matic {
+  
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.paridades_matic::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Cor verde florescente */
+  animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Cor verde florescente */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); /* Cor verde florescente mais intensa */
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Cor verde florescente */
+  }
+}
