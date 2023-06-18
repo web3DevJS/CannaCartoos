@@ -83,6 +83,17 @@
     </div>
     <p>em breve o lançamento oficial</p>
     <p>mint do NFT 10 MATIC</p>
+    
+  <section class="paridades_matic">
+    
+    <div class="preco_matic">
+    <div id="resultado_1" class="matic_brl"></div>
+    <div id="resultado_2" class="matic_usd"></div>
+    </div>
+    
+  </section>
+  
+  
   </section>
   
     <section class="paridades_matic">
@@ -92,12 +103,13 @@
       <div class="matic_usd" id="matic-usd"></div>
     </div>
     
+    </section>
+    
     <div class="fonte">
       <a href="https://www.coingecko.com/pt/moedas/polygon" class="fonte_coingecko">CoinGecko</a>
     </div>
-    </section>
   
-  </section>
+  
   
   
   <section class="genesis_explica">
@@ -158,6 +170,30 @@
     
   </section>
   
+  <section class="DEVs">
+    
+    <div class="imagem">
+      
+      <img  src="/imagens/Leonardo_Creative_a_caricature_of_a_nerd_and_his_computer_0 (2).jpg" alt="Imagem" width="300px">
+      
+      <div class="texto">
+      
+      <h2>TopBud</h2>
+      <p>empreendedor e formado na área da tecnologia e inovação.
+      <br>Como fundador do projeto CannaCartoos, estou entusiasmado em compartilhar com vocês essa incrível jornada de unir a tecnologia blockchain com a arte das caricaturas. 
+      <br>O CannaCartoos é o resultado da minha paixão pela arte e pela tecnologia, e temos como objetivo trazer coleções exclusivas de NFTs canábicos e não canábicos para o mercado.
+      <br>Estou comprometido em oferecer aos entusiastas da arte e da tecnologia uma experiência única e repleta de criatividade.
+      <br>Junte-se a nós nessa jornada e vamos explorar juntos os limites da inovação e das oportunidades!</p>
+     
+    </div>
+      
+    </div>
+
+  </section>
+  
+  
+  
+  <script src="/efeito.js"></script>
   <script src="/main.js"></script>
   <script src="/maticGrafico.js"></script>
 
@@ -186,5 +222,23 @@
     
     <p class="direitos">&copy; 2023 CannaCartoos. Todos os direitos reservados.</p>
   </footer>
+  
+  
+  <script>
+    
+    
+  function calcular() {
+    var maticBRL = parseFloat(document.getElementById("matic-brl").innerText.split("R$")[1]);
+
+    var resultado = maticBRL * 10;
+
+    document.getElementById("resultado").textContent = "Resultado: R$" + resultado.toFixed(2);
+  }
+</script>
+
+    
+  
+  
+  
 </body>
 </html>

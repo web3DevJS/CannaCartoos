@@ -307,3 +307,45 @@ footer p {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Cor verde florescente */
   }
 }
+
+/*Adicinei efeitos*/
+
+.DEVs {
+  text-align: center;
+  margin: 10px;
+}
+
+.imagem {
+  opacity: 0;
+  transition: opacity 10s;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+
+.imagem.mostrar {
+  opacity: 1;
+}
+
+
+.texto {
+  opacity: 0;
+  transition: opacity 15s;
+  text-align: center;
+  margin: 20px;
+  padding: 1px;
+}
+
+.texto.mostrar {
+  opacity: 1;
+}
+
+
+
+
+
+
