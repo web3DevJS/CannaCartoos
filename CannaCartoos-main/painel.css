@@ -1,0 +1,249 @@
+body {
+    background-color: #282c34;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 2px;
+    padding: 2px;
+    font-size: 16px;
+    text-align: center;
+  }
+  #h2 {
+    font-family: cursive;
+    font-size: 20px;
+  }
+  #hr-line {
+    border: solid 2px rgba(228, 5, 236, 0.342);
+    border-radius: 2px;
+    margin: 1px;
+  }
+  p {
+    margin: 5px;
+    font-family: cursive;
+    display: flex;
+    flex-direction: column; 
+  }
+  button {
+    border-color: rgba(0, 156, 21, 0.829);
+    border-radius: 3px;
+    background-color: rgba(0, 255, 213, 0.904);
+    padding: 5px;
+  }
+
+ #card {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 5px;
+  border: solid 2px rgba(5, 236, 36, 0.829);
+  border-radius: 3px;
+ }
+ .imagem {
+  display: table;
+  margin: 5px 10px;
+ }
+ .texto_imagem {
+  display: table;
+  margin-top: 0px;
+  margin-left: 15px;
+ }
+
+ footer {
+  display: inline-block;
+  color: #888;
+ }
+ a {
+  text-decoration: none;
+  color: #00ff00;
+ }
+
+ @media (max-width: 900px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 330px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+}
+@media (max-width: 820px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 300px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+}
+
+@media (max-width: 765px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 250px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+}
+
+@media (max-width: 674px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 230px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+}
+
+@media (max-width: 599px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 195px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+}
+
+@media (max-width: 519px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 130px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+}
+
+
+@media (max-width: 412px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 95px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+}
+
+@media (max-width: 360px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      margin-left: 75px;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+}
+@media (max-width: 354px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imagem {  
+      display: none;
+  }
+  img {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+}
+
