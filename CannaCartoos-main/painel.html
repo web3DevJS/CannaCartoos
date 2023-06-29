@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CannaCartoos</title>
+        <link rel="stylesheet" href="/painel.css">
+		<script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js"></script>
+
+    </head>
+    <body>
+        
+        <h2>Bem vindo a sessão de mints</h2>
+
+            <div class="container-Btn">
+                <button class="btn_conect" id="connectWalletBtn">Conectar sessão</button>
+                <button class="btn_conect" id="desconectar-meta" hidden>sessão iniciada</button>
+
+            </div>
+        
+
+       
+                <div id="card" class="card">
+                    <div class="imagem">
+                        <img src="imagens\Leonardo_Creative_Desenho_caricatura_de_uma_folha_de_Canabis_0 (2).jpg" alt="Imagem 1" width="200px">
+                        <img src="imagens\Leonardo_Creative_Desenho_caricatura_de_uma_folha_de_Canabis_0 (4).jpg" alt="Imagem 2" width="200px">
+                        <img src="imagens\Leonardo_Creative_Desenho_caricatura_de_uma_folha_de_Canabis_0 (12).jpg" alt="Imagem 3" width="200px">
+                        <img src="imagens\Leonardo_Creative_Desenho_caricatura_de_uma_folha_de_Canabis_0 (14).jpg" alt="Imagem 4" width="200px">
+                        <img src="imagens\Leonardo_Creative_Desenho_caricatura_de_uma_folha_de_Canabis_0 (11).jpg" alt="Imagem 3" width="200px">
+                    </div>
+                    <div class="texto_imagem">
+                        <p>Adquirir um GanjaGiggle é uma oportunidade única para possuir algo verdadeiramente exclusivo na Web3.<br>
+                         Com apenas 200 unidades disponíveis, esses NFTs representam raridade e pertencimento a uma comunidade seleta de entusiastas da tecnologia blockchain.<br>
+                         Além de serem obras de arte digitais, os GanjaGiggles abrem portas para possibilidades financeiras e interações dentro do ecossistema da Web3, permitindo que você deixe sua marca no futuro da arte digital e experimente uma conexão profunda com a criatividade de seus criadores.</p>
+                   
+                         <div id="hr-line"></div>
+                         <p>Maximo Supply<br>200 NFTs</p>
+                         <button id="mintar">Mintar Nft</button>
+                    </div>
+                    
+                    
+                </div><div id="card" class="card">
+                    <div class="imagem">
+                        <img src="imagens\budAI.png" alt="Imagem 1" width="200px">
+                    </div>
+                    <div class="texto_imagem">
+                        <p>Estamos nos preparando para o lançamento da próxima coleção que promete revolucionar o mundo da Web3.<br>
+                           Com uma temática cuidadosamente escolhida, estamos mergulhando em um universo envolvente e cativante, repleto de possibilidades empolgantes.<br>
+                           Cada detalhe está sendo meticulosamente planejado, desde o nome até a criação do contrato, para proporcionar uma experiência única e memorável aos entusiastas da tecnologia blockchain.<br>
+                           Estamos empolgados em compartilhar essa jornada com você, onde transparência e segurança são prioridades absolutas.<br>
+                           Ao adquirir um NFT dessa coleção, você se tornará parte de uma comunidade apaixonada, explorando um ecossistema vibrante, cheio de oportunidades financeiras e interações emocionantes. Prepare-se para deixar sua marca no futuro da arte digital, conectando-se profundamente com a criatividade e visão inovadora de nossos talentosos criadores.<br>
+                           Estamos contando os dias para revelar essa coleção extraordinária e estamos ansiosos para que você faça parte dessa jornada transformadora.<br>
+                           Junte-se a nós e prepare-se para uma experiência inesquecível na vanguarda da Web3.
+                        <section hidden>
+                         <div id="hr-line"></div>
+                            <p>Maximo Supply<br>200 NFTs</p>
+                            <button id="mint">Mintar Nft</button>
+                        </section>
+                    </div>
+                    
+                    
+                </div>
+
+
+
+                <footer>                  
+                    <div class="falow">
+                      <h3>Siga-nos no Twitter</h3>
+                      <a href="https://twitter.com/cannacartoos?t=vj8eA3oS6n0o4NRF5Mtk4g&s=09">Twitter</a>
+                    </div>                                        
+                    <p class="direitos">&copy; 2023 CannaCartoos. Todos os direitos reservados.</p>
+                  </footer>
+            
+        
+        <script>
+            var slideshow = document.getElementById("card");
+            var images = slideshow.getElementsByTagName("img");
+            var currentIndex = 0;
+
+            setInterval(function() {
+            images[currentIndex].style.display = "none";
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = "block";
+            }, 200); // Altere o valor "2000" para ajustar o tempo de transição entre as imagens (em milissegundos)
+
+        </script>
+          <script>
+			document.addEventListener("DOMContentLoaded", function() {
+		   const connectWalletBtn = document.getElementById("connectWalletBtn");
+		   connectWalletBtn.addEventListener("click", function() {
+			 if (typeof window.ethereum !== 'undefined') {
+			   ethereum
+				 .request({ method: "eth_requestAccounts" })
+				 .then(function(accounts) {
+		 
+				   const contaAtual = accounts[0];
+		 
+				   // A conexão foi bem-sucedida, e a conta do usuário está disponível em `accounts[0]`
+				   console.log("Conta conectada:", accounts[0]);
+				   document.getElementById("connectWalletBtn").hidden = true;
+				   document.getElementById("desconectar-meta").hidden = false;
+		 
+				   // Criar uma instância do contrato
+				   const web3 = new Web3(ethereum);
+		 
+				   const contractABI = [
+			 {
+				 "inputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "constructor"
+			 },
+			 {
+				 "anonymous": false,
+				 "inputs": [
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "owner",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "approved",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": true,
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "Approval",
+				 "type": "event"
+			 },
+			 {
+				 "anonymous": false,
+				 "inputs": [
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "owner",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "operator",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": false,
+						 "internalType": "bool",
+						 "name": "approved",
+						 "type": "bool"
+					 }
+				 ],
+				 "name": "ApprovalForAll",
+				 "type": "event"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "to",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "approve",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "_to",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "uint256",
+						 "name": "_mintAmount",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "mint",
+				 "outputs": [],
+				 "stateMutability": "payable",
+				 "type": "function"
+			 },
+			 {
+				 "anonymous": false,
+				 "inputs": [
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "previousOwner",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "newOwner",
+						 "type": "address"
+					 }
+				 ],
+				 "name": "OwnershipTransferred",
+				 "type": "event"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "bool",
+						 "name": "_state",
+						 "type": "bool"
+					 }
+				 ],
+				 "name": "pause",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "renounceOwnership",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "from",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "address",
+						 "name": "to",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "safeTransferFrom",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "from",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "address",
+						 "name": "to",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 },
+					 {
+						 "internalType": "bytes",
+						 "name": "data",
+						 "type": "bytes"
+					 }
+				 ],
+				 "name": "safeTransferFrom",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "operator",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "bool",
+						 "name": "approved",
+						 "type": "bool"
+					 }
+				 ],
+				 "name": "setApprovalForAll",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "string",
+						 "name": "_newBaseExtension",
+						 "type": "string"
+					 }
+				 ],
+				 "name": "setBaseExtension",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "string",
+						 "name": "_newBaseURI",
+						 "type": "string"
+					 }
+				 ],
+				 "name": "setBaseURI",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "_newmaxMintAmount",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "setmaxMintAmount",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "anonymous": false,
+				 "inputs": [
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "from",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": true,
+						 "internalType": "address",
+						 "name": "to",
+						 "type": "address"
+					 },
+					 {
+						 "indexed": true,
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "Transfer",
+				 "type": "event"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "from",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "address",
+						 "name": "to",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "transferFrom",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "newOwner",
+						 "type": "address"
+					 }
+				 ],
+				 "name": "transferOwnership",
+				 "outputs": [],
+				 "stateMutability": "nonpayable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "withdraw",
+				 "outputs": [],
+				 "stateMutability": "payable",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "owner",
+						 "type": "address"
+					 }
+				 ],
+				 "name": "balanceOf",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "baseExtension",
+				 "outputs": [
+					 {
+						 "internalType": "string",
+						 "name": "",
+						 "type": "string"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "baseURI",
+				 "outputs": [
+					 {
+						 "internalType": "string",
+						 "name": "",
+						 "type": "string"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "getApproved",
+				 "outputs": [
+					 {
+						 "internalType": "address",
+						 "name": "",
+						 "type": "address"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "owner",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "address",
+						 "name": "operator",
+						 "type": "address"
+					 }
+				 ],
+				 "name": "isApprovedForAll",
+				 "outputs": [
+					 {
+						 "internalType": "bool",
+						 "name": "",
+						 "type": "bool"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "maxMintAmount",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "maxSupply",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "",
+						 "type": "address"
+					 }
+				 ],
+				 "name": "mintedCount",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "mintPrice",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "name",
+				 "outputs": [
+					 {
+						 "internalType": "string",
+						 "name": "",
+						 "type": "string"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "owner",
+				 "outputs": [
+					 {
+						 "internalType": "address",
+						 "name": "",
+						 "type": "address"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "ownerOf",
+				 "outputs": [
+					 {
+						 "internalType": "address",
+						 "name": "",
+						 "type": "address"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "paused",
+				 "outputs": [
+					 {
+						 "internalType": "bool",
+						 "name": "",
+						 "type": "bool"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "bytes4",
+						 "name": "interfaceId",
+						 "type": "bytes4"
+					 }
+				 ],
+				 "name": "supportsInterface",
+				 "outputs": [
+					 {
+						 "internalType": "bool",
+						 "name": "",
+						 "type": "bool"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "symbol",
+				 "outputs": [
+					 {
+						 "internalType": "string",
+						 "name": "",
+						 "type": "string"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "index",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "tokenByIndex",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "owner",
+						 "type": "address"
+					 },
+					 {
+						 "internalType": "uint256",
+						 "name": "index",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "tokenOfOwnerByIndex",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "tokenId",
+						 "type": "uint256"
+					 }
+				 ],
+				 "name": "tokenURI",
+				 "outputs": [
+					 {
+						 "internalType": "string",
+						 "name": "",
+						 "type": "string"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [],
+				 "name": "totalSupply",
+				 "outputs": [
+					 {
+						 "internalType": "uint256",
+						 "name": "",
+						 "type": "uint256"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 },
+			 {
+				 "inputs": [
+					 {
+						 "internalType": "address",
+						 "name": "_owner",
+						 "type": "address"
+					 }
+				 ],
+				 "name": "walletOfOwner",
+				 "outputs": [
+					 {
+						 "internalType": "uint256[]",
+						 "name": "",
+						 "type": "uint256[]"
+					 }
+				 ],
+				 "stateMutability": "view",
+				 "type": "function"
+			 }
+		 ]
+				   ;
+				   const contractAddress = "0x6747ebC0A0a82d29764693942b7f27C007b9C766";
+		 
+				   contract = new web3.eth.Contract(contractABI, contractAddress);
+		 
+				   // Monitora a troca de contas na Metamask
+				   ethereum.on("accountsChanged", function(newAccounts) {
+					 // A conta do usuário foi alterada
+					 console.log("Conta alterada:", newAccounts[0]);
+					// conectado.textContent = newAccounts;
+				   });
+				   
+/*		 
+				   //FUNÇÃO TOTALSUPPLY
+				   verSupply.addEventListener("click", function() {
+						 contract.methods.totalSupply().call()
+						 .then(function(result) {
+							 console.log("TotalSupply:", result)
+							 var totalSupplyElement = document.getElementById("Total_Supply");
+							   totalSupplyElement.textContent = result;
+						 })
+						  .catch(function(error) {
+								 console.error("Erro ao obter o TotalSupply:", error);
+							 });
+					   });
+*/	 
+				   //FUNÇÃO MINT BOMBANDO
+				   mintar.addEventListener("click", function () {
+						 var mintTotal = 1;
+						 contract.methods.mint(contaAtual, mintTotal).send({ from: contaAtual, value: "10000000000000000" })//OBSERVAR O VALUE POIS DEVESE POR O VALOR CORRETO ATUAL 0.01 CENTAVO DE MATIC
+						 .then(function() {
+							 console.log("Mint realizado com sucesso!")
+						 })
+						 .catch(function(error) {
+							 console.error("Transção negada pelo usuário", error);
+						 });
+					   });
+/*		 
+				   //Maximo Supply
+				   contract.methods.maxSupply().call({ from: contaAtual }, function(error, result) {
+						 if (error) {
+							 console.error("erro ao obter o maxSupply:", error);
+						 } else {
+							 console.log("maxSupply:", result);
+							 verMaxSupply.textContent = result;
+						  };
+					   });
+/*		 
+					 //NFTS DO USUARIO
+					 contract.methods.walletOfOwner(contaAtual).call({ from: contaAtual }, function(error, result) {
+					 if (error) {
+						 console.error("erro ao obter os NFTs:", error);
+					 } else {
+						 console.log("NFTs Ids:", result);
+		 
+						 // Seletor do elemento na interface onde as imagens serão exibidas
+						 const imagemContainer = document.getElementById("imagem-container");
+		 
+						 // Iterar sobre os IDs dos NFTs e criar elementos para exibir as imagens
+						 result.forEach(function(tokenId) {
+						 // Chamar uma função para obter a URL da imagem do NFT com base no ID
+						 const imageUrl = obterUrlImagemNFT(tokenId);
+		 
+						 // Criar um elemento de imagem
+						 const imagemElemento = document.createElement("img");
+						 imagemElemento.src = imageUrl;
+		 
+						 // Adicionar a imagem ao container na interface
+						 imagemContainer.appendChild(imagemElemento);
+						 });
+					 };
+					 });
+		 
+						 // Função para obter a URL da imagem do NFT com base no ID
+						 function obterUrlImagemNFT(tokenId) {
+						 // Lógica para obter a URL da imagem do NFT com base no ID
+						 // ...
+						 const baseUrl = "https://plum-important-anglerfish-920.mypinata.cloud/ipfs/QmXdhx6nd7RvKjTt7Fk6z8wjgfZSR7T3wdxVD9ktENmUem/";
+						 const imageUrl = baseUrl + tokenId + ".png";
+		 
+						 return imageUrl;
+						 }
+		 
+		 
+						 // AQUI VOCÊ PODE CONTINUAR ADICIONANDO OUTRAS FUNCIONALIDADES
+		 
+		 
+*/		 
+
+						 // Função para desconectar a MetaMask
+function disconnectMetaMask() {
+  // Verificar se a propriedade ethereum está disponível
+  if (window.ethereum) {
+    // Verificar se o MetaMask está conectado
+    if (window.ethereum.isConnected()) {
+      window.ethereum.disconnect();
+      console.log('Desconectado da MetaMask');
+      // Executar qualquer ação adicional necessária após a desconexão
+    } else {
+      console.log('MetaMask não está conectado');
+    }
+  } else {
+    console.log('MetaMask não está instalado');
+  }
+}
+
+// Adicionar um manipulador de eventos para o botão de desconexão
+document.getElementById('desconectar-meta').addEventListener('click', disconnectMetaMask);
+
+
+				 })
+				 .catch(function(error) {
+				   // Ocorreu um erro ao conectar-se à Metamask
+				   console.error("Erro ao conectar à Metamask:", error);
+				 });
+			 } else {
+			   // A Metamask não está instalada ou habilitada no navegador
+			   console.error("A Metamask não está disponível");
+			 }
+		   });
+		 });
+		 
+		   </script>
+    </body>
+
+</html>

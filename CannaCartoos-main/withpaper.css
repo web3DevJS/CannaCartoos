@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  font-size: 25px;
+}
+
+.navegar_withpaper {
+  text-align: center;
+}
+
+.introducao {
+  text-align: center;
+}
+
+.Visao {
+  text-align: center;
+}
+
+.Tecnologia {
+  text-align: center;
+}
+
+.HerbBud_Coin {
+  text-align: center;
+}
+
+.Roadmap {
+  text-align: center;
+}
+
+.Participacao {
+  text-align: center;
+}
+
+.Conclusao {
+  text-align: center;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.linha_footer {
+  border-bottom: 1px solid black;
+  margin: 10px 10px;
+  margin-bottom: 20px;
+}
