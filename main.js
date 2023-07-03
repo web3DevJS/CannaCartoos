@@ -18,10 +18,11 @@ function updateCountdown() {
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
+/*
   // Atualiza o elemento HTML com a contagem regressiva
   const countdownElement = document.getElementById('countdown');
   countdownElement.textContent = `${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+*/
 }
 
 console.log('Hello World!');
