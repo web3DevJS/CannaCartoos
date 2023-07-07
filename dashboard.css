@@ -1,0 +1,98 @@
+body {
+    background-color: #282c34;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    text-align: center;
+    font-family: cursive;
+    font-size: 20px;
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+    margin: 5px 20px 10px 20px;
+}
+.container-Btn {
+    text-align: center;
+    padding: 5px;
+    display: flexbox;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .butom-container {
+    background-color: #1e2129;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    
+  } 
+  button {
+    border: solid 2px rgba(0, 194, 162, 0.904);
+    border-radius: 3px;
+    background-color: rgba(0, 255, 213, 0.904);
+    padding: 5px;
+    color: black; 
+  }
+  button a {
+    color: black;
+    text-decoration: none;
+  }
+  .btn_conect {
+    background-color: #1e2129;
+    border: solid 1px #181a22;
+    color: #888;
+    font-family: cursive;
+  }
+  
+.hr-line {
+    border: solid 2px rgba(228, 5, 236, 0.342);
+    border-radius: 3px;
+    margin: 10px 50px 10px 50px;   
+}
+.nfts_wallet {
+    margin: 15px 10px 15px 10px;
+    padding: 20px;
+    text-align: center;
+    border: solid 3px #00ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    color: #00ff00;
+    font-family: cursive;
+}
+#imagem-container img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 300px;
+    height: 300px;
+    border: solid 3px #00ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    display: flexbox; 
+}
+footer {   
+    color: #888;
+    text-align: center;
+   }
+   a {
+    text-decoration: none;
+    color: #00ff00;
+   }
+
+@media (max-width: 412px) {
+    #imagem-container img {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 7px;
+        margin-right: 7px;
+        width: 200px;
+        height: 200px;
+        border: solid 3px #00ff00;
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        display: flexbox;
+        flex-direction: column;  
+    }
+}
